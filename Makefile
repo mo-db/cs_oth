@@ -11,8 +11,8 @@ OBJ_DIR := obj
 BIN_DIR := bin
 
 ## COMPILER AND FILETYPE
-CXX := clang++
-CX := cc
+CXX := gcc
+CX := c
 
 ## GENERATE VARS FROM SRC_NAMES
 EXE := $(BIN_DIR)/a.out
@@ -21,7 +21,7 @@ OBJ_FILES := $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRC_NAMES)))
 ASM_FILES := $(addprefix $(OBJ_DIR)/, $(addsuffix .s, $(SRC_NAMES)))
 
 ## FLAGS
-BASE_FLAGS := -std=c++23 -I$(SRC_DIR)
+BASE_FLAGS := -std=c11 -I$(SRC_DIR)
 # Create dependency files 
 # If header changes, trigger recompilation of dependent source files
 DEP_FLAGS := -MMD -MP
@@ -46,7 +46,7 @@ CXXFLAGS := $(BASE_FLAGS) $(DEBUG_FLAGS) $(WARNING_FLAGS) $(DEP_FLAGS)
 LDFLAGS := -lpthread -lm $(DEBUG_FLAGS) 
 
 ## External libraries
-EXT_LIBS := sdl3
+EXT_LIBS :=
 
 # Only call pkg-config if at least one external library is specified
 ifeq ($(EXT_LIBS),)
