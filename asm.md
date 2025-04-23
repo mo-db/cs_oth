@@ -17,3 +17,20 @@
 - `RISC-V` -> follows RISC CPU design
   - `open ISA` -> no license needed
   - at the moment most relevant for embedded - but debian 13 will support it
+
+# x86
+[https://docs.oracle.com/cd/E26502_01/html/E28388/eoiyg.html]
+- `Directives` or Pseudo-Op's -> start with .
+- syntax dialects
+  - Linux:	nasm, as, gcc	NASM, AT&T	Most common setup
+  - Windows	ml.exe, nasm	MASM, NASM	Use with Visual Studio
+  - Cross-platform	nasm, fasm	NASM	Good for bare metal/bootloaders
+  - C/C++	gcc, clang	AT&T, Intel	Can include inline assembly
+
+
+
+
+
+
+
+    - 
