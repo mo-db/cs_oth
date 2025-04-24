@@ -18,19 +18,46 @@
   - `open ISA` -> no license needed
   - at the moment most relevant for embedded - but debian 13 will support it
 
-# x86
-[https://docs.oracle.com/cd/E26502_01/html/E28388/eoiyg.html]
-- `Directives` or Pseudo-Op's -> start with .
+# General
+[https://developer.arm.com/documentation/ddi0602/2024-06/Base-Instructions]
+- opcodes -> 8 bit numbers -> represent the mnemonic instructions for the cpu
 - syntax dialects
-  - Linux:	nasm, as, gcc	NASM, AT&T	Most common setup
-  - Windows	ml.exe, nasm	MASM, NASM	Use with Visual Studio
-  - Cross-platform	nasm, fasm	NASM	Good for bare metal/bootloaders
-  - C/C++	gcc, clang	AT&T, Intel	Can include inline assembly
+  - Windows	masm
+  - Cross-platform	nasm, fasm
+  - C/C++	gcc, clang	AT&T
+
+# x86 (AT&T/GAS)
+- `Directives` or Pseudo-Op's -> start with .
+  - .ascii          -> String
+  - .asciz          -> Null-terminated String
+  - .byte           -> 1B
+  - .hword/.short   -> 2B
+  - .int/.long      -> 4B
+  - .quad           -> 8B
+  - .octa           -> 16B
+  - .float/.single  -> Float
+  - .double         -> Double Float
+
+- 3 Types of opperands: Immediate, Register, Memory
+  - memory, memory  -> not allowed
+  - symbol          -> load memory at adress
+  - $symbol         -> immediate address (pointer)
+
+[https://c9x.me/x86/]
+- instructions
+  -suffixes: b, w, l, q
+
+# x86 intel-style
+- data declaration
+  - in .section .data
+    - db, dw, dd, dq, dt
+  - in .section .bss
+    - resd, resw, resd, resq, rest
+
+# ARM
 
 
 
 
 
 
-
-    - 
